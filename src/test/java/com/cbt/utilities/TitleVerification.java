@@ -1,12 +1,9 @@
 package com.cbt.utilities;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.graalvm.compiler.asm.sparc.SPARCAssembler;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.*;
 public class TitleVerification {
-    static WebDriver driver;
+    private static WebDriver driver;
     public static void main(String[] args) throws Exception {
         List<String> urls = Arrays.asList("http://practice.cybertekschool.com/",
                                           "http://practice.cybertekschool.com/dropdown",
