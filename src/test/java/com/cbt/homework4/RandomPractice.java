@@ -8,39 +8,40 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class RandomCheckBoxes {
+public class RandomPractice {
     private WebDriver driver;
     private String URL = "http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCheckBox";
-    private Random random;
 
-    @Test(description = "Generate random and select checkboxes ")
-    public void clickCheckBoxes(){
-        random = new Random();
-        int fridayCount = 0;
-        List<WebElement> checkBoxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        List<WebElement> titles = driver.findElements(By.xpath("//label"));
-        int r = 0;
-        while (fridayCount!=3){
-            r = random.nextInt(7);
-            WebElement current =checkBoxes.get(r);
+    @Test
+    public void checkBoxTest(){
+        int countFriday = 0;
+        Random r = new Random();
+        List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
+        List<WebElement> labels = driver.findElements(By.xpath("//label"));
+
+        while (countFriday!=3){
+            int index = r.nextInt(7);
+            WebElement current = checkboxes.get(index);
+
             if(current.isEnabled()){
-                current.click();
-                System.out.println(titles.get(r).getText());
-
-                if (titles.get(r).getText().equals("Friday")) {
-                    fridayCount++;
+                current.click(); // to check
+                System.out.println(labels.get(index).getText());
+                current.click(); // to uncheck
+                if (labels.get(index).getText().equals("Friday")){
+                    countFriday++;
+                    System.out.println(countFriday);
                 }
-                current.click();
-            } else{
-                continue;
             }
         }
-        Assert.assertEquals(fridayCount,3);
+        Assert.assertEquals(countFriday,3);
     }
+
+
     @BeforeMethod
     public void setup(){
         driver = BrowserFactory.getDriver("chrome");
