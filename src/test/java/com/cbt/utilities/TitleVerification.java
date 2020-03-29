@@ -9,7 +9,7 @@ public class TitleVerification {
                                           "http://practice.cybertekschool.com/dropdown",
                                            "http://practice.cybertekschool.com/login");
 
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver();
 
 
         Set<String> unique = new HashSet<>();

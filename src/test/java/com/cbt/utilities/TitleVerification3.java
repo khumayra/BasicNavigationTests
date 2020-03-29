@@ -15,7 +15,7 @@ public class TitleVerification3 {
 
         //In case if only one hyperlink contains only part of the title
         for (String each:urls) {
-            driver = BrowserFactory.getDriver("chrome");
+            driver = BrowserFactory.getDriver();
             driver.get(each);
 
             String t = driver.getTitle();

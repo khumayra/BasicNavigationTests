@@ -80,7 +80,7 @@ public class DateDropDown {
 
     @BeforeSuite
     public void setup(){
-        driver= BrowserFactory.getDriver("chrome");
+        driver= BrowserFactory.getDriver();
         driver.get("http://practice.cybertekschool.com/dropdown");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

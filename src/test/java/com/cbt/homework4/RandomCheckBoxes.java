@@ -43,7 +43,7 @@ public class RandomCheckBoxes {
     }
     @BeforeMethod
     public void setup(){
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver();
         driver.manage().window().maximize();
         driver.get(URL);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

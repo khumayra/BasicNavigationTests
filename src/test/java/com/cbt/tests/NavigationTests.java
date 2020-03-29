@@ -13,7 +13,7 @@ public class NavigationTests {
     }
 
     public static void chromeTest() throws Exception{
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver();
         driver.get("https://google.com");
         String title1 = driver.getTitle();
 
@@ -34,7 +34,7 @@ public class NavigationTests {
         driver.quit();
     }
     public static void safariTest() throws Exception{
-        driver = BrowserFactory.getDriver("safari");
+        driver = BrowserFactory.getDriver();
         driver.get("https://google.com");
         String title1 = driver.getTitle();
 

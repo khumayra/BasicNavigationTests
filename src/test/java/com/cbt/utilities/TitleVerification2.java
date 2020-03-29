@@ -11,7 +11,7 @@ public class TitleVerification2 {
                 "https://wayfair.com/",
                 "https://walmart.com", "https://westelm.com/");
 
-        driver = BrowserFactory.getDriver("chrome");
+        driver = BrowserFactory.getDriver();
 
         //In case if only one hyperlink contains only part of the title
         for (String each:urls) {
